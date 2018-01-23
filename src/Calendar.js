@@ -83,8 +83,8 @@ class Calendar extends Component {
 
     firebase.database().ref(`/exercises/${userUid}`).on('value', snapshot =>
       this.setState({
-      exercises: Object.entries(snapshot.val() || {}).map(([key, value]) => ({id: key, ...value}))
-    }));
+        exercises: Object.entries(snapshot.val() || {}).map(([key, value]) => ({id: key, ...value}))
+      }));
 
     firebase.database().ref(`/dietPlan/${userUid}`).on('value', snapshot => this.setState({
       dietPlan: Object.entries(snapshot.val() || {}).map(
@@ -141,7 +141,8 @@ class Calendar extends Component {
           </Modal.Header>
 
           <Modal.Content>
-            <p style={{textAlign: 'center', fontWeight: 'bold', fontSize: '18px'}}>Choose and add your daily elements</p>
+            <p style={{textAlign: 'center', fontWeight: 'bold', fontSize: '18px'}}>Choose and add your daily
+              elements</p>
 
             <div className="modalList">
               <div>
@@ -183,11 +184,11 @@ class Calendar extends Component {
                         value: exercisesItem.id,
                         text: `${exercisesItem.name} (${exercisesItem.caloriesBurnt} kCal)`
                       })
-
                     )}
                   />
 
-                  <Form.Button className='modalButton' inline color='black' onClick={this.addExercise}>Add to list</Form.Button>
+                  <Form.Button className='modalButton' inline color='black' onClick={this.addExercise}>Add to
+                    list</Form.Button>
                 </Form.Group>
 
                 <ExercisesList

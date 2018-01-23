@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import firebase from "firebase/index";
+import {Icon} from 'semantic-ui-react'
 
 
 class ExercisesRow extends Component {
@@ -16,11 +17,10 @@ class ExercisesRow extends Component {
         <td>{this.props.name}</td>
         <td>{this.props.caloriesBurnt}</td>
         <td>
-          <button
-            data-exercise-id={this.props.id}
-            onClick={this.handleRemoveClick}>
-            Remove
-          </button>
+          <Icon size='large' color='black' name='trash'
+                data-exercise-id={this.props.id}
+                onClick={this.handleRemoveClick}>
+          </Icon>
         </td>
       </tr>
     )

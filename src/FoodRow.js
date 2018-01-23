@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Icon} from 'semantic-ui-react'
 
 class FoodRow extends Component {
 
@@ -14,14 +14,13 @@ class FoodRow extends Component {
         <td>{this.props.name}</td>
         <td>{this.props.calories}</td>
         <td>
-          <button
-            data-food-id={this.props.id}
-            onClick={this.handleRemoveClick}>
-            Remove
-          </button>
+          <Icon size='large' color='black' name='trash'
+                data-food-id={this.props.id}
+                onClick={this.handleRemoveClick}>
+          </Icon>
         </td>
       </tr>
-      )
+    )
   }
 }
 

@@ -3,10 +3,8 @@ import {Icon, Menu} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
 
-
 class NavBar extends Component {
   state = {};
-
 
   render() {
     const {activeItem} = this.state;

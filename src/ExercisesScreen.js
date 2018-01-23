@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import TopNavBar from "./TopNavBar";
 import NavBar from "./NavBar";
 import ExercisesRow from "./ExercisesRow";
@@ -16,7 +16,7 @@ class ExercisesScreen extends Component {
     const userUid = firebase.auth().currentUser.uid;
     this.exercisesRef = firebase.database().ref(`/exercises/${userUid}`);
     this.listener = this.exercisesRef.on('value', snapshot => this.setState({
-      exercises: Object.entries(snapshot.val() || {}).map(([key, value]) => ({ id: key, ...value}))
+      exercises: Object.entries(snapshot.val() || {}).map(([key, value]) => ({id: key, ...value}))
     }))
   }
 
@@ -25,15 +25,13 @@ class ExercisesScreen extends Component {
   }
 
   newExercise = (exercise) => {
-    if (exercise.name === "" ) {
+    if (exercise.name === "") {
       return
     }
 
     const userUid = firebase.auth().currentUser.uid;
     firebase.database().ref(`/exercises/${userUid}`).push(exercise)
   };
-
-
 
   render() {
     return (
@@ -66,5 +64,6 @@ class ExercisesScreen extends Component {
     )
   }
 }
+
 export default ExercisesScreen;
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase'
-import { Icon, Menu} from 'semantic-ui-react'
+import {Icon, Menu} from 'semantic-ui-react'
 
 
 class FoodList extends Component {
@@ -27,7 +27,6 @@ class FoodList extends Component {
     const userUid = firebase.auth().currentUser.uid;
     firebase.database().ref(`/dietPlan/${userUid}/${(this.props.date)}/food/` + foodItem).remove()
   };
-
 
   render() {
     return (

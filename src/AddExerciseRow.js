@@ -32,6 +32,8 @@ class AddExerciseRow extends Component {
               value={this.state.name}
               name='name'
               required
+              minlength = '1'
+              type='text'
             />
           </td>
           <td>

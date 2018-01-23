@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import TopNavBar from "./TopNavBar";
 import SettingsMenu from "./SettingsMenu";
 

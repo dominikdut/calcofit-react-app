@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Modal, Button } from 'semantic-ui-react'
+import {Modal, Button} from 'semantic-ui-react'
 
 class MultipleModal extends Component {
 

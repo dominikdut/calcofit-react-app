@@ -15,7 +15,7 @@ class FoodScreen extends Component {
     const userUid = firebase.auth().currentUser.uid;
     this.foodsRef = firebase.database().ref(`/foods/${userUid}`)
     this.listener = this.foodsRef.on('value', snapshot => this.setState({
-      foods: Object.entries(snapshot.val() || {}).map(([key, value]) => ({ id: key, ...value}))
+      foods: Object.entries(snapshot.val() || {}).map(([key, value]) => ({id: key, ...value}))
     }))
   }
 
@@ -24,7 +24,7 @@ class FoodScreen extends Component {
   }
 
   newFood = (food) => {
-    if (food.name === "" ) {
+    if (food.name === "") {
       return
     }
 
@@ -50,17 +50,17 @@ class FoodScreen extends Component {
           </tr>
           </thead>
           <tbody>
-            {this.state.foods.map(
-              (food) => (
-                <FoodRow
-                  key={food.id}
-                  id={food.id}
-                  name={food.name}
-                  calories={food.calories + ' (kcal)'}
-                  removeFood={this.removeFood}
-                />
-              )
-            )}
+          {this.state.foods.map(
+            (food) => (
+              <FoodRow
+                key={food.id}
+                id={food.id}
+                name={food.name}
+                calories={food.calories + ' (kcal)'}
+                removeFood={this.removeFood}
+              />
+            )
+          )}
           <AddFoodRow onNewFoodAdded={this.newFood}/>
           </tbody>
         </table>

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
+import React, {Component} from 'react'
+import {Button, Form, Grid, Header, Segment} from 'semantic-ui-react'
 import firebase from 'firebase'
 import TopNavBarGoals from "./TopNavBarGoals";
 
@@ -7,7 +7,6 @@ const goalOptions = [
   {key: 't', text: 'Lose weight', value: 'lose'},
   {key: 'f', text: 'Gain weight', value: 'gain'}
 ];
-
 
 class GoalsMenu extends Component {
 
@@ -25,7 +24,6 @@ class GoalsMenu extends Component {
     });
   }
 
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -41,21 +39,22 @@ class GoalsMenu extends Component {
     })
   };
 
-  handleSelectChange = (event, { name, value }) => {
+  handleSelectChange = (event, {name, value}) => {
     this.setState({
       [event.target.name || name]: event.target.value || value
     })
   };
+
   render() {
     return (
       <div className='login-form'>
         <TopNavBarGoals title="Settings / Set my goals"/>
         <Grid
           textAlign='center'
-          style={{ height: '100%' }}
+          style={{height: '100%'}}
           verticalAlign='middle'>
 
-          <Grid.Column style={{ maxWidth: 450 }}>
+          <Grid.Column style={{maxWidth: 450}}>
 
             <Header as='h2' textAlign='center' className='login-header'>
               {' '}Goals
@@ -91,7 +90,8 @@ class GoalsMenu extends Component {
                 >Save</Button>
               </Segment>
             </Form>
-            <Button onClick={() => firebase.auth().signOut()} className='button-style' color='red' fluid size='large'>Log out</Button>
+            <Button onClick={() => firebase.auth().signOut()} className='button-style' color='red' fluid size='large'>Log
+              out</Button>
           </Grid.Column>
         </Grid>
       </div>

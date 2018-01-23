@@ -16,10 +16,18 @@ class AddFoodRow extends Component {
     })
   };
 
+
+  handleCaloriesChange = ({ target: { name, value }}) => {
+    if (value && isNaN(value)) {
+      this.setState({caloriesInputError: 'Calories should be a number'});
+    }
+  };
+
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
+
   };
 
   render() {
@@ -39,11 +47,12 @@ class AddFoodRow extends Component {
             <Form.Input
               type="number"
               min="1"
-              onChange={this.handleChange}
+              onChange={this.handleCaloriesChange}
               value={this.state.calories}
               name='calories'
-              required
+
             />
+            { this.state.caloriesInputError }
           </td>
           <td>
             <button onClick={this.onClick}>Add</button>

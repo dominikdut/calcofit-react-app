@@ -9,7 +9,7 @@ class ProgressBarInCalendar extends Component {
   render() {
     return (
       <div>
-          <Progress percent={this.state.percent} autoSuccess/>
+        <Progress percent={this.state.percent} autoSuccess/>
       </div>
     )
   }

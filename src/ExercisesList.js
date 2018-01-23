@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase'
-import {  Icon, Menu } from 'semantic-ui-react'
+import {Icon, Menu} from 'semantic-ui-react'
 
 
 class ExercisesList extends Component {
@@ -32,18 +32,18 @@ class ExercisesList extends Component {
     return (
       <div>
 
-        <ul>
+        <ul className='modalListItem'>
           {
             this.state.exercisesList.map(
               exercisesItem => (
                 <li key={exercisesItem.id}>
                   {exercisesItem.name} ({(exercisesItem.caloriesBurnt)})
 
-                  <Menu.Item style = {{display: 'inline-block'}}>
-                  <Icon size='large' color='black' name='trash'
-                    data-exercises-item={exercisesItem.id}
-                    onClick={this.handleRemoveClick}>
-                  </Icon>
+                  <Menu.Item style={{display: 'inline-block'}}>
+                    <Icon size='large' color='black' name='trash'
+                          data-exercises-item={exercisesItem.id}
+                          onClick={this.handleRemoveClick}>
+                    </Icon>
                   </Menu.Item>
 
                 </li>
