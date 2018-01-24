@@ -32,7 +32,7 @@ class FoodList extends Component {
     return (
       <div>
 
-        <ul>
+        <ul className='modalListItem'>
           {
             this.state.foodList.map(
               foodItem => (

@@ -30,8 +30,9 @@ body > div > div > div.login-form {
   display: flex;
   flex-direction: row;
 }
+
 .modalListItem {
-  list-style-image: url('img/gym-dumbbell.svg')
+  list-style-type: square;
 
 }
 

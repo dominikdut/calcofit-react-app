@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Form} from 'semantic-ui-react'
+import {Form, Icon} from 'semantic-ui-react'
 
 class AddExerciseRow extends Component {
   state = {
@@ -47,7 +47,12 @@ class AddExerciseRow extends Component {
             />
           </td>
           <td>
-            <button onClick={this.onClick}>Add</button>
+            <Icon
+              size='large'
+              color='black'
+              name='add'
+              onClick={this.onClick}>
+            </Icon>
           </td>
         </tr>
 
